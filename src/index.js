@@ -30,6 +30,9 @@ app.use((req, res, next) => {
 // Routes
 app.use(require("./routes"));
 
+// Public
+app.use(express.static(join(__dirname, "public")));
+
 app.listen(app.get("port"), () => {
     console.log(`Server started on port ${app.get("port")}`);
 });
